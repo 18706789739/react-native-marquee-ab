@@ -144,6 +144,7 @@ export default class MarqueeHorizontal extends Component {
 
     textLengthView(list){
         let { textStyle } = this.props;
+        let { textWidth } = this.state;
         let text = '';
         for(let i = 0;i<list.length;i++){
             text += list[i].value;
@@ -151,7 +152,7 @@ export default class MarqueeHorizontal extends Component {
         return(
             <View style = {{
                 ...styles.textMeasuringViewStyle,
-                width : list.length * 1024
+                width : textWidth
             }}>
                 <Text style = {{
                     ...styles.textMeasuringTextStyle,
